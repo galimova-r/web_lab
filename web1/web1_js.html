@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Веселый калькулятор</title>
+</head>
+<body>
+<script>
+
+
+    alert('Сейчас вам нужно будет ввести числа для суммы')
+    var ch = parseInt(prompt('Введите 1 число: '));
+    var ch2 = parseInt(prompt('Введите 2 число: '));
+    alert('Сумма: ' + (ch + ch2));
+
+    alert('Сейчас вам нужно будет ввести числа для вычитания')
+    var ch = parseInt(prompt('Введите 1 число: '));
+    var ch2 = parseInt(prompt('Введите 2 число: '));
+    alert('Вычитание: ' + (ch - ch2));
+
+    alert('Сейчас вам нужно будет ввести числа для умножения')
+    var ch = parseInt(prompt('Введите 1 число: '));
+    var ch2 = parseInt(prompt('Введите 2 число: '));
+    alert('Умножение: ' + (ch * ch2));
+
+    alert('Сейчас вам нужно будет ввести числа для деления')
+    var ch = parseInt(prompt('Введите 1 число: '));
+    var ch2 = parseInt(prompt('Введите 2 число: '));
+    alert('Деление: ' + (ch/ch2));
+
+    var nom = parseInt(prompt('Задумайте число: '))
+    nom = nom*2 + 7
+    alert('Результат: ' + nom)
+
+    var name = prompt('Введите Имя: ')
+    var date = parseInt(prompt('Введите ГОД рождения: '))
+    var age = 2023 - date
+    if (age >= 0) {
+        var point = ':';
+        document.write(name + point + age);
+    } else {
+        document.write('Вам не может быть меньше нуля лет')
+    }
+
+
+
+</script>
+
+</body>
+</html>
