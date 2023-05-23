@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="button1" value="Среднее рандома">
+    <p id="arif"></p>
+
+    <input type="button" id="button2" value="Без отрицательных">
+    <p id="newarr"></p>
+
+    <input type="button" id="button3" value="Найти параметры по массиву">
+    <p id="par"></p>
+    <p id="par2"></p>
+
+
+<script>
+
+
+    
+
+    let button1 = document.querySelector('#button1');
+    button1.addEventListener('click', function num_1() {
+        var arr = [];
+        var summ = 0;
+        var arif = document.getElementById('arif');
+        for(i=0; i<14; i++) {
+            arr[i] = Math.round(Math.random() * (30 - (-10)) + (-10));
+            if (arr[i]>0){
+                summ +=arr[i];
+                var sr = summ/15;
+                var arif = document.getElementById('arif');
+                arif.innerHTML="<h1>Среднее 15-ти рандомных чисел: "+sr+"<h1>";
+                }
+        
+        }
+        
+    });
+
+    let button2 = document.querySelector('#button2');
+    button2.addEventListener('click', function num_1() {
+        var arr = [];
+
+        for(i=0; i<14; i++) {
+            arr[i] = Math.round(Math.random() * (30 - (-10)) + (-10));
+            if (arr[i]<0){
+                arr[i] = arr[i]*arr[i];
+                }
+            var newarr = document.getElementById('newarr');
+            newarr.innerHTML="<h1>Новый массив "+arr+"<h1>";
+        
+        }
+        
+    });
+
+    let button3 = document.querySelector('#button3');
+    button3.addEventListener('click', function num_1() {
+        var arr = [];
+        var summ = 0;
+        var summ2 = 0;
+        for(i=0; i<14; i++) {
+            arr[i] = Math.round(Math.random() * (50 - (-50)) + (-50));
+            if (arr[i]>0){
+                summ +=arr[i];
+                var sr = summ/15;
+                var par = document.getElementById('par');
+                par.innerHTML="<h1>Среднее положительных чисел: "+sr+"<h1>";
+                }
+            else if (arr[i]<0){
+                summ2 +=arr[i];
+                var sr2 = summ/15;
+                var par2 = document.getElementById('par2');
+                par2.innerHTML="<h1>Среднее отрицательных чисел: "+sr2+"<h1>";
+                }
+        
+        }
+        
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>
