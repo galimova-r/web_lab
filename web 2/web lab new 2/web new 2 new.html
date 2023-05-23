@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Что такое Солнце?</p>
+    <input id="input">
+    <input type="button" id="button" value="Проверить">
+    <p id="answer"></p>
+    
+
+    <input type="button" id="button2" value="Посчитаем">
+    <p id="numbers"></p>
+
+    <input type="button" id="button3" value="Застолье">
+    <input type="button" id="button4" value="Факториал">
+    <p id="f"></p>
+
+    <input type="button" id="button5" value="Палиндром">
+    <input type="button" id="button6" value="простые числа">
+
+    <p id="pch"></p>
+
+<script>
+    let input = document.querySelector('#input');
+    let button = document.querySelector('#button');
+
+
+    button.addEventListener('click', function num_1() {
+        if (input.value == "Звезда"){
+            var elem = document.getElementById('answer');
+            elem.innerHTML = "Верно";
+        } else{
+            var elem = document.getElementById('answer');
+            elem.innerHTML = "Не верно";}
+        
+    });
+
+    let button2 = document.querySelector('#button2');
+    button2.addEventListener('click', function num_2() {
+        var n = 0;
+        while (n<=9){
+            n=n+1;
+            var num = document.getElementById('numbers');
+            num.innerHTML+="<h1>"+ n +"<h1>"
+            
+        }
+        
+    });
+
+
+    let button3 = document.querySelector('#button3');
+    button3.addEventListener('click', function num_3() {
+        do{
+        alert('Еще по одной?');
+        }while (prompt('введи "хватит", чтобы выйти')!= "хватит");
+        
+    });
+
+
+
+    function factorial(x) {
+        if (x === 0) {
+        return 1;
+        }
+        return x * factorial(x-1);
+        }
+
+
+    let button4 = document.querySelector('#button4');
+    button4.addEventListener('click', function num_4() {
+        var resf = 0;
+        resf = factorial(4);
+        var f = document.getElementById('f');
+        f.innerHTML="<h1>Факториал числа 4 равно "+resf+"<h1>"
+    });
+
+    function isPalindrome(string) {
+        string = string.toLowerCase().replace(/\W/g, '');
+        const stringArray = [...string];
+        const newArray = [];
+        stringArray.forEach(index => {
+            newArray.unshift(index);
+        });
+        const reversedString = newArray.join('');
+        console.log(string);
+        return string === reversedString;
+    }
+
+    let button5 = document.querySelector('#button5');
+    button5.addEventListener('click', function num_5() {
+        var pol = prompt("Введите слово для проверки на палиндром");
+        alert(isPalindrome(pol));
+        
+    });
+
+    let button6 = document.querySelector('#button6');
+    button6.addEventListener('click', function num_6() {
+        
+        var n = prompt("Число до которого нужно найти простые числа");
+        nextPrime:
+        for (let i = 2; i <= n; i++) { 
+        for (let j = 2; j < i; j++) { 
+            if (i % j == 0) continue nextPrime; 
+        }
+        var pch = document.getElementById('pch');
+            pch.innerHTML+="<h1>"+ i +"<h1>" 
+        }
+
+    });
+    
+
+
+    
+
+
+
+</script>
+</body>
+</html>
