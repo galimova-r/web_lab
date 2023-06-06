@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+  <title>Глобальные стили</title>
+  <style>
+
+   h2 { 
+    font-size: 120%; 
+    font-family: 'Roboto', sans-serif;
+    color: #000000; 
+   }
+
+   body {
+    background:url(https://pibig.info/uploads/posts/2022-08/1659393295_1-pibig-info-p-stilnii-belii-fon-krasivo-1.jpg);
+
+   }
+  </style>
+ </head>
+ <body style="margin-left: 40%;margin-right:0%; margin-top:15%">
+
+  
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <script><!--
+            function Complete1()
+            {
+                
+                if((document.Sel3.Pwd.value==document.Sel3.Pwd1.value) && (document.Sel3.email.value.includes("@")))
+                    alert("Вас зарегистрировали\nID="+document.Sel3.Id.value+"\nPassword="+document.Sel3.Pwd.value);
+
+
+                else
+                    alert("Ошибка при вводе пароля\nПопробуйте еще раз\nИли неверно введена электронная почта\nПопробуйте еще раз");
+            }
+            //-->
+        </script>
+    </head>
+    <body>
+    <H1>Регистрация</H1>
+    <h2>
+    <FORM NAME="Sel3">
+        <TABLE>
+            <TR><TD><B>Логин:<B></TD>
+                <TD><INPUT NAME="Id" SIZE=20
+                           onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+            <TR><TD><B>Пароль:<B></TD>
+                <TD><INPUT TYPE="password" NAME="Pwd" SIZE=20
+                           onFocus="this.select();"></TD></TR>
+            <TR><TD><B>Проверка пароля:<B></TD>
+                <TD><INPUT TYPE="password" NAME="Pwd1" SIZE=20
+                           onFocus="this.select();"></TD></TR>
+            <TR><TD><B>Введите e-mail:<B></TD>
+            <TD><INPUT NAME="email" SIZE=20
+                        onFocus="this.select();"></TD></TR>
+        </TABLE>
+        <INPUT TYPE="button" class="btn btn-outline-success" VALUE="Готово" onClick="Complete1();">
+        <INPUT TYPE="reset" class="btn btn-outline-info" VALUE="Сброс">
+    </FORM>
+    </h2>
+    </body>
+    </html>
+    
+ </body>
+</html>
