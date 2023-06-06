@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>lab 7</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body style="margin-left: 20%;margin-right: 20%;">
+    <h1>Массивы</h1>
+    <h3>Изначальный массив  [1, 2, 3, 4, 5] </h3>
+
+    <input type="button" id="button_na10" value="Увеличить на 10">
+    <p id="answer_na10"></p>
+    <input type="button" id="button_x3" value="Умножить на 3">
+    <p id="answer_x3"></p>
+    <br>
+    <h1>Возраст людей из массива</h1>
+    <p id="b_dates_p"></p>
+    <p id="years_old"></p>
+    <h1>Администраторы</h1>
+    <p id="admins_p"></p>
+    <h1>Средний балл студентов (округлено до целого)</h1>
+    <p id="student_score"></p>
+    <h3>Из заданного массива возвращаем массив, состоящий из нулей (для тех элементов длинна которых меньше либо равна 3) и единиц (в другом случае).</h3>
+    <p id="zero_one"></p>
+
+
+
+<script>
+
+//1.    Воспользовавшись методом map(), создайте новый массив из имеющегося, который содержит увеличенные элементы на 10 и в три раза.
+    let button_na10 = document.querySelector('#button_na10');
+    let button_x3 = document.querySelector('#button_x3');
+    var arr1 = [1, 2, 3, 4, 5];
+
+
+    button_na10.addEventListener('click', function num_1() {
+        
+        var answer_na10 = document.getElementById('answer_na10');
+        let arr2 = arr1.map(item => item + 10);
+        answer_na10.innerHTML = arr2;
+        
+        
+    });
+    
+    button_x3.addEventListener('click', function num_2() {
+        
+        var answer_na10 = document.getElementById('button_x3');
+        let arr2 = arr1.map(item => item * 3);
+        answer_x3.innerHTML = arr2;
+        
+        
+    });
+
+
+//2.	Имеется массив «год рождения». Необходимо вывести их возраст.
+    var b_dates = ["1/1/2000", "1/12/2000", "3/4/1998", "7/5/2001", "1/4/1991", "8/11/1987"]
+
+    let b_years = b_dates.map(item => ((new Date().getTime() - new Date(item)) / (24 * 3600 * 365.25 * 1000)) | 0) ;
+    b_dates_p.innerHTML = "Даты рождения "+b_dates;
+    years_old.innerHTML = b_years;
+
+//3.    Реализуйте проверку по условию на право редактирования сайта и вывод имени админа.
+    const persons = [
+    { name: 'Peter', privilege: 'admin' },
+    { name: 'Mark', privilege: 'admin' },
+    { name: 'John', privilege: 'user' },
+    { name: 'Jane', privilege: 'admin' },
+    { name: 'Tony', privilege: 'user'},
+    ];
+
+    
+    fetch('https://64480f567bb84f5a3e513e9a.mockapi.io/ex/k')
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            let admins = data.filter(person => person.privilege == 'privilege 1');
+            let adminNames = admins.map(admin => admin.name);
+            admins_p.innerHTML = adminNames;
+
+            
+          });
+
+
+
+
+    
+
+//4.    Вычислите средний балл студентов.
+
+    const scores = [75, 82, 90, 67, 88, 95, 72];
+
+    var sum = scores.reduce(function(accumulator, currentValue) { 
+        return accumulator + currentValue; 
+    });
+
+    var average = sum / scores.length;
+    student_score.innerHTML = average | 0;
+
+
+//5.     Используя синтаксис, создайте собственную функцию высшего порядка, которая из заданного массива возвращает массив, состоящий из нулей 
+//(для тех элементов длинна которых меньше либо равна 3) и единиц (в другом случае).
+
+    const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
+
+    let newArr = strArray.map(item => fnzero(item));
+
+    function fnzero(i){if (i.length <= 3){return 0}else{return 1};}
+
+    zero_one.innerHTML = newArr;
+
+
+
+</script>
+
+
+
+</body>
+</html>
