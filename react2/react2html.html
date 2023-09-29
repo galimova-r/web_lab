@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Mountains</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+function Profile1() {
+  return (
+    <img
+      src="https://i.pinimg.com/originals/98/6c/16/986c16ce8c2bfb23c9747a6edb13c51b.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+
+function Profile2() {
+  return (
+    <img
+      src="https://i.pinimg.com/originals/41/a2/05/41a2057b0be100e8378506cac16f0341.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+
+function Profile3() {
+  return (
+    <img
+      src="http://static.tildacdn.com/tild3261-3864-4130-a663-633734366465/5-jelbrus-s-severa.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+function Text1() {
+  return (
+    <p>A mountain is an elevated portion of the Earth's crust, generally with steep sides that show significant exposed bedrock.</p>
+  );
+}
+
+function Text2() {
+  return (
+    <p>In the United Kingdom and the Republic of Ireland, a mountain is usually defined as any summit at least 2,000 feet (610 m) high,[6].</p>
+  );
+}
+
+function Text3() {
+  return (
+    <p>There are three main types of mountains: volcanic, fold, and block.</p>
+  );
+}
+
+
+function MyButton1() {
+  return (
+    <button class="btn btn-outline-dark">
+      See now
+    </button>
+  );
+}
+
+function MyButton2() {
+  return (
+    <button class="btn btn-outline-dark">
+      See now
+    </button>
+  );
+}
+
+function MyButton3() {
+  return (
+    <button class="btn btn-outline-dark">
+      See now
+    </button>
+  );
+}
+
+
+function Navigation() {
+  return (
+    <nav class="menu">
+      <ul>
+        <li><a2 href="react2html.html">Mountains</a2></li>
+        <li><a href="react2html.html">Main</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </nav>
+
+  );
+}
+
+let App = function Gallery() {
+  return (
+    <section>
+      <Navigation/>
+      <h1>Mountains</h1>
+      <p1>A mountain is an elevated portion of the Earth's crust, generally with steep sides that show significant exposed bedrock.</p1>
+      
+      <div class="flex-container">
+        <div class="item1"><Profile1 />< Text1/>< MyButton1/></div>
+        <div class="item2"><Profile2 />< Text2/>< MyButton2/></div>
+        <div class="item3"><Profile3 />< Text3/>< MyButton3/></div>
+        
+        
+
+      </div>
+
+    </section>
+  );
+}
+
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3d3d3d;
+}
+
+
+
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: right;
+}
+
+li a2 {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  float: left;
+  
+  
+}
+
+li a:hover {
+  background-color: #111;
+  color: white;
+}
+
+
+
+.flex-container {
+
+display: flex;
+
+justify-content: space-around;     
+
+
+height: 100%;
+padding: 15px;
+gap: 5px;
+
+}
+
+.flex-container > div{
+
+  
+border-radius: 5px;
+padding: 8px;
+}
+
+
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+
+p1 {margin-left: 25px;   font-size: 25px;}
+
+
+
+h1 {
+  margin-left: 25px;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+h2 {
+
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+img { 
+  height: 190px
+   }
+
+</style>
+</html>
