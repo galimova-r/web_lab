@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+
+
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script type="importmap">
+
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { useState } from 'react';
+
+
+function MyNav(){
+    return(
+        <nav className="menu">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        </nav>
+)
+    
+}
+
+
+function BookCard({ imgbook, size = 100, desc, title, prise }) {
+  return (
+    <div>
+        <img
+        className="books"
+        src={imgbook}
+        width={size}
+        height={size}
+        />
+        <h2 className="booktitle">{title}</h2>
+        <p>{desc}</p>
+        <h1>{prise}</h1>
+        <button type="button" className="btn btn-outline-success">Купить онлайн</button>
+    </div>
+    
+  );
+}
+
+function Book() {
+  return (
+    <div className="flex-container">
+        <div className="item1">
+            <BookCard
+                imgbook = {"https://galam.tm/image/cache/catalog/Images/Products/BK-00091280-600x550.jpeg"}
+                size={300}
+                desc = {"Князь Мышкин, главный герой знаменитого романа Ф. М. Достоевского 'Идиот', несет людям проповедь сострадания, прощения, милосердия и братства."}
+                title = {"Идиот, Достоевский Ф.М."}
+                prise = {"560₽"}
+                
+
+            />
+        </div>
+        <div className="item2">
+            <BookCard
+                imgbook = {"https://worldbooks.ch/upload/iblock/0e3/0e323435880c1d8715790174ca2a10da.jpg"}
+                size={300}
+                desc = {"Книга, покорившая мир, эталон литературы для читателей всех возрастов, синоним успеха. Книга, сделавшая Дж.К. Роулинг самым читаемым писателем современности. Книга, ставшая культовой уже для нескольких поколений. Гарри Поттер и узник Азкабана – история продолжается."}
+                title = {"Гарри Поттер и узник Азкабана"}
+                prise = {"899₽"}
+
+            />
+        </div>
+        <div className="item3">
+            <BookCard
+                imgbook = {"https://www.letu.ru/common/img/marketplace/2023/09/390cc51d-1242-4b2d-97c0-b9ca60f331a1.jpg"} 
+                size={300}
+                desc = {"Научно-фантастический роман Рэя Брэдбери «451 градус по Фаренгейту» – одна из самых известных антиутопий XX века. Пугающий мир, в котором книги находятся под запретом, порождает людей, лишённых способности критически мыслить, любить, творить. Присмотритесь: может быть, этот мир уже возле вашего порога?"}
+                title = {"451 градус по Фаренгейту"}
+                prise = {"659₽"}
+
+            />
+        </div>
+        <div className="item4">
+            <BookCard
+                imgbook = {"https://avatars.mds.yandex.net/get-mpic/1861069/img_id3306405667693281297.jpeg/9"} 
+                size={300}
+                desc = {"В маленьком провинциальном городке Дерри много лет назад семерым подросткам пришлось столкнуться с кромешным ужасом – живым воплощением ада. Прошли годы… Подростки повзрослели, и ничто, казалось, не предвещало новой беды. Но кошмар прошлого вернулся, неведомая сила повлекла семерых друзей назад, в новую битву со Злом. "}
+                title = {"Оно. Воссоединение. Кинг С."}
+                prise = {"475₽"}
+
+            />
+        </div>
+    </div>
+  );
+}
+
+
+
+
+let App = function MyApp() {
+  return (
+    <div>
+      <h1 className="head">BookBoo</h1>
+      <MyNav />
+      <br/>
+      <h1 className="head2">Сейчас читают</h1>
+      <Book />
+      
+    </div>
+  );
+}
+
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.books{
+  text-align: center;
+}
+
+.booktitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.head {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.head2 {
+  text-align: center;
+  font-size: 40px;
+
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li a:hover {
+  background-color: #111;
+  color: white;
+}
+
+.flex-container {
+
+display: flex;
+
+justify-content: center;
+align-items: stretch;  
+
+background-color: #ffffff;
+height: 100%;
+padding: 15px;
+gap: 5px;
+
+}
+
+.flex-container > div{
+background: #eeeeee;
+border: 1px solid #575757;
+border-radius: 5px;
+padding: 8px;
+}
+
+
+
+</style>
+</html>
